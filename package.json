@@ -6,11 +6,11 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "debug:docker": "docker build -t new-project . && docker run --rm -it new-project bash",
+    "docker:debug": "docker build -t new-project . && docker run --rm -it new-project bash",
+    "docker:start": "docker build -t new-project . && docker run --rm -p 8000:80 new-project",
     "linter:fix": "eslint . --fix",
     "prettier:fix": "prettier --write .",
     "start": "vite",
-    "start:docker": "docker build -t new-project . && docker run --rm -p 8000:80 new-project",
     "test": "npm run test:prettier && npm run test:linter && npm run test:typescript && npm run test:integration",
     "test:integration": "playwright test",
     "test:integration:ui": "playwright test --ui",
